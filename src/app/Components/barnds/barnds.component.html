@@ -1,0 +1,37 @@
+<section class="container">
+  <div class="row gy-4 my-4">
+    @for (brand of brandsList; track brand._id) {
+
+    <div class="col-md-3">
+    
+      <div class="">
+        <!-- Replacing the button with a div -->
+        <div class="product cr" data-bs-toggle="modal" [attr.data-bs-target]="'#brand-' + brand._id">
+          <div class="product rounded">
+            <img [src]="brand.image" [alt]="brand.name">
+            <h6 class="text-center text-capitalize">{{brand.name}}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade"  [id]="'brand-' + brand._id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title  fs-5" [id]="'#'+ brand._id">{{brand.name}}</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <img [src]="brand.image" [alt]="brand.name" class="w-50">
+            <h6 class="text-center text-capitalize text-main">{{brand.name}}</h6>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    }
+  </div>
+</section>

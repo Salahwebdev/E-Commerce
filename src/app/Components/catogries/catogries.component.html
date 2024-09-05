@@ -1,0 +1,16 @@
+<section class="container">
+<div class="row justify-content-center my-2 g-4">
+   @for (catList of catogriesList; track catList._id) {
+    <div class="col-md-4 ">
+        
+        <div class="cr product p-3" [routerLink]="['/specificcategory',catList._id]">
+            <img [src]="catList.image" class="w-100 " height="300px" [alt]="catList.name">
+            <h2 class="text-center text-main h5">{{catList.name}}</h2>
+
+        </div>
+    </div>
+   }
+</div>
+
+
+</section>

@@ -1,0 +1,21 @@
+<section>
+    <h1 class="text-center text-main">Your Orders</h1>
+    <div class="container">
+        <div class="row justify-content-center mt-2 ">
+            @for (order of orderData; track $index) {
+
+            @for (item of order.cartItems ; track $index) {
+
+            <div class="col-md-4  ">
+                <img [src]="item.product.imageCover" [alt]="item.product.title" class="w-75">
+                <h3 class="text-main text-center"> {{item.product.title}} </h3>
+                <h3 class="text-main text-center"> {{item.price}} </h3>
+            </div>
+
+            }
+
+            }
+        </div>
+    </div>
+
+</section>
